@@ -10,12 +10,12 @@ import {UserInfoService} from '../services/user-info.service';
 })
 export class PageHeaderComponent implements OnInit {
 
-  userStatus:any
   userInfo:any
+  userStatusService:UserStatusService
 
-  constructor(private userStatusService: UserStatusService,
+  constructor(private userStatusSvc: UserStatusService,
       private userInfoService: UserInfoService) {
-    this.userStatus = userStatusService.getUserStatus()
+    this.userStatusService = userStatusSvc
     this.userInfo = userInfoService.getUserInfo()
   }
 
@@ -24,10 +24,18 @@ export class PageHeaderComponent implements OnInit {
   }
 
   isUserLoggedIn() {
-    return this.userStatus;
+    return this.userStatusService.getUserStatus();
   }
 
   isUserLoggedOut() {
-    return !this.userStatus;
+    return !this.userStatusService.getUserStatus();
+  }
+
+  mockLogin() {
+    this.userStatusService.setUserStatus(true);
+  }
+
+  mockLogout() {
+    this.userStatusService.setUserStatus(false);
   }
 }
