@@ -1,8 +1,6 @@
 # ng7-test
 Playing with Angular 7
 
-
-
 https://codinglatte.com/amp/posts/angular/sign-in-with-google-angular/
 
 https://www.npmjs.com/package/angularx-social-login
@@ -11,9 +9,22 @@ https://angular-templates.io/tutorials/about/learn-angular-from-scratch-step-by-
 
 
 # Setup
+```
 npm install -g @angular/cli
 ng new ng7-test  ;; Select defaults
+```
 
+## Bootstrap
+
+https://ng-bootstrap.github.io/#/getting-started
+```
+   npm install --save bootstrap 
+   npm install --save @ng-bootstrap/ng-bootstrap
+```
+In root styles.css add
+```
+@import '~bootstrap/dist/css/bootstrap.css';
+```
 # Ng7Test
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
