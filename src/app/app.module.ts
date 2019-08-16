@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserStatusService } from './services/user-status.service';
+import { UserInfoService } from './services/user-info.service';
 
 @NgModule({
   imports: [
@@ -17,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     PageHeaderComponent
   ],
-  providers: [],
+  providers: [UserStatusService, UserInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,5 +18,21 @@
         <a class="nav-link" href="#">Link</a>
       </li>    
     </ul>
-  </div>  
+  </div>
+
+  <div *ngIf="isUserLoggedIn()" class="row">
+    <div class="col-md-6">
+      <div><strong>Name:</strong> {{userInfo?.firstName}} {{userInfo?.lastName}}</div>
+      <div><strong>Email:</strong> {{userInfo?.email}}</div>
+      <div><strong>ID:</strong> {{userInfo?.userId}}</div>
+      <div><strong>Status:</strong> {{userStatus}}</div>
+    </div>
+  </div>
+
+  <div *ngIf="isUserLoggedOut()" class="row">
+    <div class="col-md-6">
+      <div>NOT LOGGED IN</div>
+      <div><strong>Status:</strong> {{userStatus}}</div>
+    </div>
+  </div>
 </nav>
