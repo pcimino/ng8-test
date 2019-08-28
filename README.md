@@ -66,5 +66,10 @@ https://pandas.pydata.org/
 # JSON Mock API
 https://www.genuitec.com/set-use-fake-rest-api-angular/
 
+To run mock data service
+```bash
+npm run json-server --open
+```
+
 # Toast
 For alerts

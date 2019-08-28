@@ -1,0 +1,90 @@
+{
+  "user-data": [
+    {
+      "id": 1,
+      "firstName": "Grover",
+      "lastName": "Over"
+    }
+  ],
+  "tracks": [
+    {
+      "id": 1,
+      "name": "Sebring International Raceway",
+      "abbr": "Sebring",
+      "latitude": "27.455079",
+      "longitude": "-81.349669"
+    },
+    {
+      "id": 2,
+      "name": "Lime Rock Park",
+      "abbr": "Lime Rock",
+      "latitude": "41.930325",
+      "longitude": "-73.390638"
+    }
+  ],
+  "race-dates": [
+      {
+        "date": "2019-03-04",
+        "tracks": [
+          {
+            "id": 1,
+            "heats": [
+              {
+                "heat": 1,
+                "class": "lmp1",
+                "drivers": [
+                  {
+                  "name": "Al",
+                  "car": 2,
+                  "pole": 1,
+                  "finish": "dnf"
+                  },
+                  {
+                  "name": "Burt",
+                  "car": 55,
+                  "pole": 2,
+                  "finish": "1"
+                  },
+                  {
+                  "name": "Carl",
+                  "car": 99,
+                  "pole": 3,
+                  "finish": "2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "heats": [
+              {
+                "heat": 1,
+                "class": "lmp2",
+                "drivers": [
+                  {
+                  "name": "Al",
+                  "car": 2,
+                  "pole": 2,
+                  "finish": "1"
+                  },
+                  {
+                  "name": "Burt",
+                  "car": 55,
+                  "pole": 1,
+                  "finish": "2"
+                  },
+                  {
+                  "name": "Carl",
+                  "car": 99,
+                  "pole": 3,
+                  "finish": "3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+  ]
+}
