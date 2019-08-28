@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserStatusService} from '../services/user-status.service';
 import {UserInfoService} from '../services/user-info.service';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-page-header',
@@ -14,7 +14,8 @@ export class PageHeaderComponent implements OnInit {
   userStatusService:UserStatusService
 
   constructor(private userStatusSvc: UserStatusService,
-      private userInfoService: UserInfoService) {
+      private userInfoService: UserInfoService,
+      private toastr: ToastrService) {
     this.userStatusService = userStatusSvc
     this.userInfo = userInfoService.getUserInfo()
   }
@@ -32,10 +33,13 @@ export class PageHeaderComponent implements OnInit {
   }
 
   mockLogin() {
+    this.toastr.success('Welcome', 'Your are logged in');
     this.userStatusService.setUserStatus(true);
   }
 
   mockLogout() {
+  console.log("TEST")
+    this.toastr.warning('Session Ended', 'Your are logged out');
     this.userStatusService.setUserStatus(false);
   }
 }

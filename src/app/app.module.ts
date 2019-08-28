@@ -8,13 +8,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserStatusService } from './services/user-status.service';
 import { UserInfoService } from './services/user-info.service';
 import { LeftListComponent } from './left-list/left-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   declarations: [
     AppComponent,
