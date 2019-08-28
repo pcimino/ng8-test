@@ -59,3 +59,12 @@ https://hashrocket.com/blog/posts/create-quick-json-data-dumps-from-postgresql
 
 https://hashrocket.com/blog/posts/faster-json-generation-with-postgresql
 
+# Read CVS
+
+https://pandas.pydata.org/
+
+# JSON Mock API
+https://www.genuitec.com/set-use-fake-rest-api-angular/
+
+# Toast
+For alerts

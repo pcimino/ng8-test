@@ -7,6 +7,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserStatusService } from './services/user-status.service';
 import { UserInfoService } from './services/user-info.service';
+import { LeftListComponent } from './left-list/left-list.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { UserInfoService } from './services/user-info.service';
   ],
   declarations: [
     AppComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    LeftListComponent
   ],
   providers: [UserStatusService, UserInfoService],
   bootstrap: [AppComponent]
