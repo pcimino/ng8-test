@@ -1,14 +1,26 @@
 # ng7-test
 Playing with Angular 7
 
-https://codinglatte.com/amp/posts/angular/sign-in-with-google-angular/
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
-https://www.npmjs.com/package/angularx-social-login
+# Running Demo
+```bash
+npm install
+```
+Will need two command lines to run both the ng server and the json mock data server:
 
-https://angular-templates.io/tutorials/about/learn-angular-from-scratch-step-by-step
+```bash
+npm run json-server
+```
+And
+```bash
+ng serve --open
+```
+Which should open your default browser, if not, click here:
+[Demo](http://localhost:4200/){:target="_blank"}
 
-
-# Setup
+# Notes
+## Setup
 ```
 npm install -g @angular/cli
 ng new ng7-test  ;; Select defaults
@@ -25,9 +37,6 @@ In root styles.css add
 ```
 @import '~bootstrap/dist/css/bootstrap.css';
 ```
-# Ng7Test
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
 ## Development server
 
@@ -53,23 +62,33 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-# JSON Postgres
+## JSON Postgres
 
-https://hashrocket.com/blog/posts/create-quick-json-data-dumps-from-postgresql
+<a href="https://hashrocket.com/blog/posts/create-quick-json-data-dumps-from-postgresql" target="_blank">create-quick-json-data-dumps-from-postgresql</a> 
 
-https://hashrocket.com/blog/posts/faster-json-generation-with-postgresql
 
-# Read CVS
+<a href="https://hashrocket.com/blog/posts/faster-json-generation-with-postgresql" target="_blank">faster-json-generation-with-postgresql</a> 
 
-https://pandas.pydata.org/
+## Read CVS
 
-# JSON Mock API
-https://www.genuitec.com/set-use-fake-rest-api-angular/
+<a href="https://pandas.pydata.org/
+
+## JSON Mock API
+<a href="https://www.genuitec.com/set-use-fake-rest-api-angular/" target="_blank">JSON Mock API</a>   
 
 To run mock data service
 ```bash
-npm run json-server --open
+npm run json-server
 ```
 
-# Toast
+## Toast
 For alerts
+
+# TODO
+<a href="https://codinglatte.com/amp/posts/angular/sign-in-with-google-angular/" target="_blank">Google Auth</a>    
+
+<a href="https://www.npmjs.com/package/angularx-social-login" target="_blank">Angular Social Login</a>    
+
+<a href="https://angular-templates.io/tutorials/about/learn-angular-from-scratch-step-by-step" target="_blank">Angular Step by Step</a>    
+  
+
