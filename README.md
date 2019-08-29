@@ -5,16 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Running Demo
 ```bash
-npm install
-```
-Will need two command lines to run both the ng server and the json mock data server:
+npm install   
+npm run start:mocks
 
-```bash
-npm run json-server
-```
-And
-```bash
-ng serve --open
 ```
 Which should open your default browser, if not, click here:
 [Demo](http://localhost:4200/){:target="_blank"}
