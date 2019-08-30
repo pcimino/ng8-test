@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserStatusService } from './services/user-status.service';
-import { UserInfoService } from './services/user-info.service';
+import { APIService } from './services/api.service';
 import { LeftListComponent } from './left-list/left-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -25,7 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
     PageHeaderComponent,
     LeftListComponent
   ],
-  providers: [UserStatusService, UserInfoService],
+  providers: [UserStatusService, APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

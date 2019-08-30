@@ -1,9 +1,10 @@
 {
   "user-data": [
     {
-      "id": 1,
+      "userId": "rodgerdodger",
       "firstName": "Grover",
-      "lastName": "Over"
+      "lastName": "Over",
+      "email": "rodgerdodger@groverville.org"
     }
   ],
   "tracks": [

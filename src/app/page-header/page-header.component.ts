@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserStatusService} from '../services/user-status.service';
-import {UserInfoService} from '../services/user-info.service';
+import { UserStatusService } from '../services/user-status.service';
+import { APIService } from '../services/api.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -10,14 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PageHeaderComponent implements OnInit {
 
-  userInfo:any
-  userStatusService:UserStatusService
+  userInfo:UserInfo
 
   constructor(private userStatusSvc: UserStatusService,
-      private userInfoService: UserInfoService,
+      private apiService: APIService,
       private toastr: ToastrService) {
-    this.userStatusService = userStatusSvc
-    this.userInfo = userInfoService.getUserInfo()
   }
 
   ngOnInit() {
@@ -25,21 +22,23 @@ export class PageHeaderComponent implements OnInit {
   }
 
   isUserLoggedIn() {
-    return this.userStatusService.getUserStatus();
+  return true;
+    return this.userStatusSvc.getUserStatus();
   }
 
   isUserLoggedOut() {
-    return !this.userStatusService.getUserStatus();
+    return !this.userStatusSvc.getUserStatus();
   }
 
   mockLogin() {
     this.toastr.success('Welcome', 'Your are logged in');
-    this.userStatusService.setUserStatus(true);
+    this.userStatusSvc.setUserStatus(true);
+    this.userInfo = this.apiService.getUserInfo()
   }
 
   mockLogout() {
   console.log("TEST")
     this.toastr.warning('Session Ended', 'Your are logged out');
-    this.userStatusService.setUserStatus(false);
+    this.userStatusSvc.setUserStatus(false);
   }
 }
