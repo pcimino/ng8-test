@@ -85,3 +85,7 @@ For alerts
 <a href="https://angular-templates.io/tutorials/about/learn-angular-from-scratch-step-by-step" target="_blank">Angular Step by Step</a>    
   
 
+## Adding Routes
+```
+ng g module app-routing   
+```

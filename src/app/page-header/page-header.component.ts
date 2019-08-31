@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserStatusService } from '../services/user-status.service';
 import { APIService } from '../services/api.service';
 import { ToastrService } from 'ngx-toastr';
+import { UserInfo } from '../classes/user-info';
 
 @Component({
   selector: 'app-page-header',
