@@ -25,7 +25,7 @@
   ],
   "race-dates": [
       {
-        "date": "2019-03-04",
+        "date": "20190304",
         "tracks": [
           {
             "id": 1,
@@ -78,6 +78,69 @@
                   {
                   "name": "Carl",
                   "car": 99,
+                  "pole": 3,
+                  "finish": "3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "20190305",
+        "tracks": [
+          {
+            "id": 1,
+            "heats": [
+              {
+                "heat": 1,
+                "class": "lmp2",
+                "drivers": [
+                  {
+                  "name": "Dave",
+                  "car": 32,
+                  "pole": 1,
+                  "finish": "dnf"
+                  },
+                  {
+                  "name": "Eliza",
+                  "car": 5,
+                  "pole": 2,
+                  "finish": "1"
+                  },
+                  {
+                  "name": "Florence",
+                  "car": 9,
+                  "pole": 3,
+                  "finish": "2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "heats": [
+              {
+                "heat": 1,
+                "class": "spec-gt",
+                "drivers": [
+                  {
+                  "name": "Dave",
+                  "car": 32,
+                  "pole": 2,
+                  "finish": "1"
+                  },
+                  {
+                  "name": "Eliza",
+                  "car": 5,
+                  "pole": 1,
+                  "finish": "2"
+                  },
+                  {
+                  "name": "Florence",
+                  "car": 9,
                   "pole": 3,
                   "finish": "3"
                   }

@@ -22,7 +22,6 @@ export class PageHeaderComponent implements OnInit {
   }
 
   isUserLoggedIn() {
-  return true;
     return this.userStatusSvc.getUserStatus();
   }
 
@@ -37,7 +36,6 @@ export class PageHeaderComponent implements OnInit {
   }
 
   mockLogout() {
-  console.log("TEST")
     this.toastr.warning('Session Ended', 'Your are logged out');
     this.userStatusSvc.setUserStatus(false);
   }

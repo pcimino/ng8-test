@@ -1,5 +1,5 @@
-# ng7-test
-Playing with Angular 7
+# ng8-test
+Playing with Angular 8
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
@@ -16,7 +16,7 @@ Which should open your default browser, if not, click here:
 ## Setup
 ```
 npm install -g @angular/cli
-ng new ng7-test  ;; Select defaults
+ng new ng8-test  ;; Select defaults
 ```
 
 ## Bootstrap
