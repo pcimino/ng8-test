@@ -87,5 +87,6 @@ For alerts
 
 ## Adding Routes
 ```
-ng g module app-routing   
+ng generate module app-routing --module app --flat   
 ```
+https://medium.com/@ozgurgul/angular-6-login-and-router-tutorial-ac5fc5d3027f

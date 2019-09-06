@@ -10,6 +10,28 @@ import { APIService } from './services/api.service';
 import { LeftListComponent } from './left-list/left-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { PagenotfoundPageComponent } from './pagenotfound-page/pagenotfound-page.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardPageComponent
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },
+  { path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PagenotfoundPageComponent }
+];
+
 
 @NgModule({
   imports: [
@@ -17,13 +39,21 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ToastrModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   declarations: [
     AppComponent,
     PageHeaderComponent,
-    LeftListComponent
+    LeftListComponent,
+    LoginPageComponent,
+    DashboardPageComponent,
+    PagenotfoundPageComponent
   ],
   providers: [UserStatusService, APIService],
   bootstrap: [AppComponent]
