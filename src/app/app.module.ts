@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { PageHeaderComponent } from './page-header/page-header.component';
+import { PageHeaderAuthComponent } from './page-header-auth/page-header-auth.component';
+import { PageHeaderUnauthComponent } from './page-header-unauth/page-header-unauth.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserStatusService } from './services/user-status.service';
 import { APIService } from './services/api.service';
@@ -33,7 +34,8 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   declarations: [
     AppComponent,
-    PageHeaderComponent,
+    PageHeaderAuthComponent,
+    PageHeaderUnauthComponent,
     LeftListComponent,
     LoginPageComponent,
     DashboardPageComponent,

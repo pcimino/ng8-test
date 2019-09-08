@@ -5,11 +5,11 @@ import { ToastrService } from 'ngx-toastr';
 import { UserInfo } from '../classes/user-info';
 
 @Component({
-  selector: 'app-page-header',
-  templateUrl: './page-header.component.html',
-  styleUrls: ['./page-header.component.css']
+  selector: 'app-page-header-unauth',
+  templateUrl: './page-header-unauth.component.html',
+  styleUrls: ['./page-header-unauth.component.css']
 })
-export class PageHeaderComponent implements OnInit {
+export class PageHeaderUnauthComponent implements OnInit {
 
   userInfo:UserInfo
 

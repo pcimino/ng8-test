@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageHeaderComponent } from './page-header.component';
+import { PageHeaderAuthComponent } from './page-header-auth.component';
 
-describe('PageHeaderComponent', () => {
-  let component: PageHeaderComponent;
-  let fixture: ComponentFixture<PageHeaderComponent>;
+describe('PageHeaderAuthComponent', () => {
+  let component: PageHeaderAuthComponent;
+  let fixture: ComponentFixture<PageHeaderAuthComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageHeaderComponent ]
+      declarations: [ PageHeaderAuthComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageHeaderComponent);
+    fixture = TestBed.createComponent(PageHeaderAuthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

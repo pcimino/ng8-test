@@ -1,4 +1,5 @@
 
+import { Routes, RouterModule } from '@angular/router';
 import { LoginPageComponent } from '../login-page/login-page.component';
 import { DashboardPageComponent } from '../dashboard-page/dashboard-page.component';
 import { PagenotfoundPageComponent } from '../pagenotfound-page/pagenotfound-page.component';
