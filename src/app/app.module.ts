@@ -10,28 +10,12 @@ import { APIService } from './services/api.service';
 import { LeftListComponent } from './left-list/left-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { APP_ROUTES } from './app-routing/app-routes.const';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { PagenotfoundPageComponent } from './pagenotfound-page/pagenotfound-page.component';
 import { RouterModule, Routes } from '@angular/router';
-
-const appRoutes: Routes = [
-  {
-    path: 'dashboard',
-    component: DashboardPageComponent
-  },
-  {
-    path: 'login',
-    component: LoginPageComponent
-  },
-  { path: '',
-    redirectTo: '/dashboard',
-    pathMatch: 'full'
-  },
-  { path: '**', component: PagenotfoundPageComponent }
-];
-
 
 @NgModule({
   imports: [
@@ -43,7 +27,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(
-      appRoutes,
+      APP_ROUTES,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
