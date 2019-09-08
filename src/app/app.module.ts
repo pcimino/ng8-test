@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PageHeaderAuthComponent } from './page-header-auth/page-header-auth.component';
 import { PageHeaderUnauthComponent } from './page-header-unauth/page-header-unauth.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UserStatusService } from './services/user-status.service';
+import { AuthService } from './services/auth.service';
 import { APIService } from './services/api.service';
 import { LeftListComponent } from './left-list/left-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { PagenotfoundPageComponent } from './pagenotfound-page/pagenotfound-page.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth-guard.service';
 
 @NgModule({
   imports: [
@@ -41,7 +42,7 @@ import { RouterModule, Routes } from '@angular/router';
     DashboardPageComponent,
     PagenotfoundPageComponent
   ],
-  providers: [UserStatusService, APIService],
+  providers: [AuthService, APIService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

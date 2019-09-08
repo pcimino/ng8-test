@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserStatusService } from '../services/user-status.service';
 import { APIService } from '../services/api.service';
 import { ToastrService } from 'ngx-toastr';
 import { UserInfo } from '../classes/user-info';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-header-auth',
@@ -13,7 +14,8 @@ export class PageHeaderAuthComponent implements OnInit {
 
   userInfo:UserInfo
 
-  constructor(private userStatusSvc: UserStatusService,
+  constructor(private router: Router,
+      private authSvc: AuthService,
       private apiService: APIService,
       private toastr: ToastrService) {
   }
@@ -22,22 +24,9 @@ export class PageHeaderAuthComponent implements OnInit {
 
   }
 
-  isUserLoggedIn() {
-    return this.userStatusSvc.getUserStatus();
-  }
-
-  isUserLoggedOut() {
-    return !this.userStatusSvc.getUserStatus();
-  }
-
-  mockLogin() {
-    this.toastr.success('Welcome', 'Your are logged in');
-    this.userStatusSvc.setUserStatus(true);
-    this.userInfo = this.apiService.getUserInfo()
-  }
-
   mockLogout() {
+    this.authSvc.logout();
     this.toastr.warning('Session Ended', 'Your are logged out');
-    this.userStatusSvc.setUserStatus(false);
+    this.router.navigate(['login']);
   }
 }

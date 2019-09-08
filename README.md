@@ -90,3 +90,9 @@ For alerts
 ng generate module app-routing --module app-routing
 ```
 https://medium.com/@ozgurgul/angular-6-login-and-router-tutorial-ac5fc5d3027f
+
+## Adding Route Guards
+```
+ng g s guards/authGuard
+```
+https://codeburst.io/using-angular-route-guard-for-securing-routes-eabf5b86b4d1

@@ -27,3 +27,11 @@
   </div>
 </nav>
 
+
+  <div class="row">
+    <div class="col-md-6">
+      <div [class.white]>LOGGED IN</div>
+      <div><strong>Status:</strong> {{userStatus}}</div>
+      <div><button (click)="mockLogout()" type="button" class="btn btn-primary">Logout</button></div>
+    </div>
+  </div>

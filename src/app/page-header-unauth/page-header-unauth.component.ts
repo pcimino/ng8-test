@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserStatusService } from '../services/user-status.service';
-import { APIService } from '../services/api.service';
+import { AuthService } from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
-import { UserInfo } from '../classes/user-info';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-header-unauth',
@@ -13,8 +12,8 @@ export class PageHeaderUnauthComponent implements OnInit {
 
   userInfo:UserInfo
 
-  constructor(private userStatusSvc: UserStatusService,
-      private apiService: APIService,
+  constructor(private router: Router,
+      private authSvc: AuthService,
       private toastr: ToastrService) {
   }
 
@@ -22,22 +21,18 @@ export class PageHeaderUnauthComponent implements OnInit {
 
   }
 
-  isUserLoggedIn() {
-    return this.userStatusSvc.getUserStatus();
-  }
-
-  isUserLoggedOut() {
-    return !this.userStatusSvc.getUserStatus();
-  }
-
   mockLogin() {
-    this.toastr.success('Welcome', 'Your are logged in');
-    this.userStatusSvc.setUserStatus(true);
-    this.userInfo = this.apiService.getUserInfo()
+    this.toastr.success("isUserLoggedIn", this.authSvc.isAuthenticated())
+
+    this.authSvc.login();
+    this.toastr.success("isUserLoggedIn", this.authSvc.isAuthenticated())
+
+    if (this.authSvc.isAuthenticated()) {
+        this.router.navigate(['dashboard']);
+        this.toastr.success('Welcome', 'You are logged in');
+    } else {
+        this.toastr.error('Sorry', 'Try again');
+    }
   }
 
-  mockLogout() {
-    this.toastr.warning('Session Ended', 'Your are logged out');
-    this.userStatusSvc.setUserStatus(false);
-  }
 }
