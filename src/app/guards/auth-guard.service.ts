@@ -2,24 +2,19 @@ import { AuthService } from '../services/auth.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
   constructor(private _authService: AuthService,
-    private _router: Router,
-    private toastr: ToastrService) {
+    private _router: Router) {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    this.toastr.warning('Auth Guard', '1');
-    if (this._authService.isAuthenticated()) {
-        this.toastr.warning('Auth Guard', '2');
 
+    if (this._authService.isAuthenticated()) {
         return true;
     }
-    this.toastr.warning('Auth Guard', '3');
 
     // navigate to login page
     this._router.navigate(['/login']);
