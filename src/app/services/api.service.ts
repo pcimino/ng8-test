@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserInfo } from '../classes/user-info';
+import { TrackInfo } from '../classes/track-info';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
@@ -12,6 +13,7 @@ export class APIService {
   private baseURL = 'http://localhost:3004/'
 
   private userInfo: UserInfo;
+  private trackInfo: TrackInfo;
   private raceInfo: any;
 
   constructor(private httpArg: HttpClient,
@@ -28,6 +30,17 @@ export class APIService {
           this.toastr.error('Error', res.error.error);
     });
     return this.userInfo;
+  }
+
+  getTrackInfo(): TrackInfo {
+    this.http.get(this.baseURL+'tracks').subscribe((res)=>{
+        this.trackInfo = res;
+        console.log(this.trackInfo);
+    },
+    res => {
+          this.toastr.error('Error', res.error.error);
+    });
+    return this.trackInfo;
   }
 
   getRaceInfo(track: string, date: any) {

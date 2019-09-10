@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 
 const TOKEN = 'TOKEN';
 
@@ -8,11 +7,9 @@ const TOKEN = 'TOKEN';
 })
 export class AuthService {
 
-  constructor(private toastr: ToastrService) { }
+  constructor() { }
 
   isAuthenticated() {
-  this.toastr.warning('isAuthenticated', '1');
-  this.toastr.warning("localStorage.getItem('token')", localStorage.getItem('token'))
     return localStorage.getItem('token') !== null;
   }
 

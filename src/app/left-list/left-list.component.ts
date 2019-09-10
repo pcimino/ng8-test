@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../services/api.service';
+import { TrackInfo } from '../classes/track-info';
 
 @Component({
   selector: 'app-left-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftListComponent implements OnInit {
 
-  constructor() { }
+  trackInfoList:TrackInfo
+
+  constructor(private apiSvc: APIService) { }
 
   ngOnInit() {
+    this.trackInfoList = this.apiSvc.getTrackInfo();
   }
 
 }

@@ -14,7 +14,8 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(
       private apiSvc: APIService,
-      private toastr: ToastrService) { }
+      private toastr: ToastrService) {
+      }
 
   ngOnInit() {
     this.userInfo = this.apiSvc.getUserInfo();

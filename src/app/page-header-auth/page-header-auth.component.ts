@@ -3,6 +3,7 @@ import { APIService } from '../services/api.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { UserInfo } from '../classes/user-info';
 
 @Component({
   selector: 'app-page-header-auth',
@@ -15,8 +16,9 @@ export class PageHeaderAuthComponent implements OnInit {
 
   constructor(private router: Router,
       private authSvc: AuthService,
-      private apiService: APIService,
+      private apiSvc: APIService,
       private toastr: ToastrService) {
+        this.userInfo = this.apiSvc.getUserInfo();
   }
 
   ngOnInit() {
