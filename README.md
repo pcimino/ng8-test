@@ -69,6 +69,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## JSON Mock API
 <a href="https://www.genuitec.com/set-use-fake-rest-api-angular/" target="_blank">JSON Mock API</a>   
 
+https://github.com/typicode/json-server
+
 To run mock data service
 ```bash
 npm run json-server
@@ -96,3 +98,7 @@ https://medium.com/@ozgurgul/angular-6-login-and-router-tutorial-ac5fc5d3027f
 ng g s guards/authGuard
 ```
 https://codeburst.io/using-angular-route-guard-for-securing-routes-eabf5b86b4d1
+
+
+## Google Auth
+https://github.com/Narendra-Kamath/angular-node-mfauth/

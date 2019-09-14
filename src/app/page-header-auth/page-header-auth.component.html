@@ -2,7 +2,6 @@
 
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Welcome {{userInfo?.firstName}} {{userInfo?.lastName}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,18 +19,12 @@
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
-      </li>
     </ul>
+  </div>
+  <div class="navbar-brand">Welcome {{userInfo?.firstName}} {{userInfo?.lastName}}</div>
+
+  <div class="float-right">
+        <button (click)="mockLogout()" type="button" class="btn btn-primary">Logout</button>
   </div>
 </nav>
 
-
-  <div class="row">
-    <div class="col-md-6">
-      <div [class.white]>LOGGED IN</div>
-      <div><strong>Status:</strong> {{userStatus}}</div>
-      <div><button (click)="mockLogout()" type="button" class="btn btn-primary">Logout</button></div>
-    </div>
-  </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../services/api.service';
 import { TrackInfo } from '../classes/track-info';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-left-list',
@@ -9,12 +10,21 @@ import { TrackInfo } from '../classes/track-info';
 })
 export class LeftListComponent implements OnInit {
 
-  trackInfoList:TrackInfo
+  trackInfoList:any
 
-  constructor(private apiSvc: APIService) { }
+  constructor(private apiSvc: APIService,
+      private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.trackInfoList = this.apiSvc.getTrackInfo();
+    this.loadTrackInfo();
   }
 
+  loadTrackInfo() {
+    this.apiSvc.getTrackInfo().subscribe((res)=>{
+        this.trackInfoList = res;
+    },
+    res => {
+          this.toastr.error('Error', res.error.error);
+    });
+  }
 }

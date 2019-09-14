@@ -18,11 +18,20 @@ export class PageHeaderAuthComponent implements OnInit {
       private authSvc: AuthService,
       private apiSvc: APIService,
       private toastr: ToastrService) {
-        this.userInfo = this.apiSvc.getUserInfo();
+        this.loadUserInfo();
   }
 
   ngOnInit() {
 
+  }
+
+  loadUserInfo() {
+    this.apiSvc.getUserInfo().subscribe((res)=>{
+        this.userInfo = res[0];
+    },
+    res => {
+          this.toastr.error('Error', res.error.error);
+    });
   }
 
   mockLogout() {

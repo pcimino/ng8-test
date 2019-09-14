@@ -18,6 +18,15 @@ export class DashboardPageComponent implements OnInit {
       }
 
   ngOnInit() {
-    this.userInfo = this.apiSvc.getUserInfo();
+    this.loadUserInfo();
+  }
+
+  loadUserInfo() {
+    this.apiSvc.getUserInfo().subscribe((res)=>{
+        this.userInfo = res[0];
+    },
+    res => {
+          this.toastr.error('Error', res.error.error);
+    });
   }
 }

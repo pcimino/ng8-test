@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserInfo } from '../classes/user-info';
 import { TrackInfo } from '../classes/track-info';
 import { ToastrService } from 'ngx-toastr';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class APIService {
   private baseURL = 'http://localhost:3004/'
 
   private userInfo: UserInfo;
-  private trackInfo: TrackInfo;
+  private trackInfo: any;
   private raceInfo: any;
 
   constructor(private httpArg: HttpClient,
@@ -21,29 +22,20 @@ export class APIService {
     this.http = httpArg;
   }
 
-  getUserInfo(): UserInfo {
-    this.http.get(this.baseURL+'user-data').subscribe((res)=>{
-        this.userInfo = res[0];
-        console.log(this.userInfo);
-    },
-    res => {
-          this.toastr.error('Error', res.error.error);
-    });
-    return this.userInfo;
+  getUserInfo(): Observable<Object> {
+    return this.http.get(this.baseURL+'user-data');
   }
 
-  getTrackInfo(): TrackInfo {
-    this.http.get(this.baseURL+'tracks').subscribe((res)=>{
-        this.trackInfo = res;
-        console.log(this.trackInfo);
-    },
-    res => {
-          this.toastr.error('Error', res.error.error);
-    });
-    return this.trackInfo;
+
+  getTrackInfo(): Observable<Object> {
+    return this.http.get(this.baseURL+'tracks');
   }
 
-  getRaceInfo(track: string, date: any) {
+  getRaceInfo(track: string, date: string) {
+    this.http.get(this.baseURL+'race-dates/'+date);
+  }
+
+  getRaceInfo2(track: string, date: any) {
     this.http.get(this.baseURL+'race-dates?date='+date).subscribe((res)=>{
          let tempData = res[0];
          this.raceInfo = tempData[track];

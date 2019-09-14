@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "ng serve",
-    "mock:server": "json-server --watch mock-api-data.json --port 3004",
+    "mock:server": "json-server --watch mock-api-data.json --routes mock-routes.json --port 3004",
     "start:proxy": "ng serve --proxy-config proxy.conf.json --open",
     "start:mocks": "concurrently --kill-others \"npm run mock:server\" \"npm run start:proxy\""
   },

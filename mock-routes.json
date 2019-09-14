@@ -1,0 +1,4 @@
+{
+ "/api/*": "/$1",
+  "/race-dates/:date": "/race-dates?date=:date"
+}

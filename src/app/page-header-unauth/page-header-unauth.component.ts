@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 })
 export class PageHeaderUnauthComponent implements OnInit {
 
-  userInfo:UserInfo
-
   constructor(private router: Router,
       private authSvc: AuthService,
       private toastr: ToastrService) {
@@ -22,10 +20,10 @@ export class PageHeaderUnauthComponent implements OnInit {
   }
 
   mockLogin() {
-    this.toastr.success("isUserLoggedIn", this.authSvc.isAuthenticated())
+    this.toastr.success("isUserLoggedIn", ""+this.authSvc.isAuthenticated())
 
     this.authSvc.login();
-    this.toastr.success("isUserLoggedIn", this.authSvc.isAuthenticated())
+    this.toastr.success("isUserLoggedIn", ""+this.authSvc.isAuthenticated())
 
     if (this.authSvc.isAuthenticated()) {
         this.router.navigate(['dashboard']);

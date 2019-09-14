@@ -9,7 +9,7 @@ export class AuthService {
 
   constructor() { }
 
-  isAuthenticated() {
+  isAuthenticated():boolean {
     return localStorage.getItem('token') !== null;
   }
 
